@@ -1,4 +1,4 @@
-## Blog App with Next js
+## Blog App
 
 
 

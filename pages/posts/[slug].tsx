@@ -1,15 +1,8 @@
-import Head from 'next/head';
-// import styles from '../styles/Home.module.css';
+import PostContent from '../../components/posts/post-detail/post-content';
 
 const Post: React.FC = () => {
   return (
-    <div>
-      <Head>
-        <title>Post Page</title>
-        <meta name='description' content='Single blogpost' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-    </div>
+    <PostContent />
   );
 };
 

@@ -35,3 +35,7 @@
 .content p {
   line-height: var(--size-6);
 }
+
+.content p:first-child span {
+  font-style: italic;
+}

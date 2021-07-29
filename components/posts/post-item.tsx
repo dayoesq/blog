@@ -12,15 +12,22 @@ const PostItem: React.FC<IPost> = props => {
   });
 
   const imagePath = `/images/posts/${slug}/${image}`;
+
   return (
     <li className={classes.post}>
       <Link href={`/posts/${slug}`}>
         <a>
           <div className={classes.image}>
-            <Image src={imagePath} alt={title} width={300} height={200}/>
+            <Image
+              src={imagePath}
+              alt={title}
+              width={300}
+              height={200}
+              layout='responsive'
+            />
           </div>
           <div className={classes.content}>
-            <p>{author}</p>
+            <p>By <span>{author}</span></p>
             <h3>{title}</h3>
             <time>{fomattedDate}</time>
             <p>{excerpt}</p>

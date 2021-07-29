@@ -4,7 +4,7 @@ interface IPost {
   author: string;
   body?: string;
   image?: string;
-  date: Date;
+  date: string;
   excerpt: string;
   slug?: string;
 }

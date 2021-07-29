@@ -17,7 +17,8 @@ const PostGrid: React.FC<PostProps> = ({posts}) => {
           date={post.date}
           excerpt={post.excerpt}
           title={post.title}
-          
+          image={post.image}
+          slug={post.slug}
         />
       ))}
     </ul>

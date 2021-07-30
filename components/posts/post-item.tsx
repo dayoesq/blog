@@ -4,7 +4,7 @@ import Image from 'next/image';
 import classes from './post-item.module.css';
 
 const PostItem: React.FC<IPost> = props => {
-  const { author, date, slug, title, body, excerpt, image } = props;
+  const { author, date, slug, title, excerpt, image } = props;
   const fomattedDate = new Date(date).toLocaleDateString('en-FI', {
     day: 'numeric',
     month: 'long',

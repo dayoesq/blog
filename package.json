@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "author": "Dayo Oladapo",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

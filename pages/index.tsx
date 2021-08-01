@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import Head  from 'next/head';
 
 import FeaturedPosts from '../components/home-page/featured-posts';
 import Hero from '../components/home-page/hero';
@@ -11,6 +12,10 @@ type PostsProps = {
 const Home: React.FC<PostsProps> = ({ posts }) => {
   return (
     <Fragment>
+      <Head>
+        <title>Dayo&#39;s Blog</title>
+        <meta name='description' content='I blog about programming in general'/>
+      </Head>
       <Hero />
       <FeaturedPosts posts={posts}/>
     </Fragment>

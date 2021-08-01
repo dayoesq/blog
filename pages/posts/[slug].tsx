@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+import Head from 'next/head';
 import PostContent from '../../components/posts/post-detail/post-content';
 import { getPostData, getPostFiles } from '../../lib/post-util';
 
@@ -11,9 +13,15 @@ type Post = {
   post: IPost;
 }
 
-const Post: React.FC<Post> = ({post}) => {
+const Post: React.FC<Post> = ({ post }) => {
   return (
-    <PostContent post={post}/>
+    <Fragment>
+      <Head>
+        <title>{post.title}</title>
+        <meta name='description' content={post.excerpt}/>
+      </Head>
+      <PostContent post={post} />
+    </Fragment>
   );
 };
 

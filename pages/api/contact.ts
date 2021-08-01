@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { normaliseEmail, validate } from '../../lib/validate';
 import { MongoClient } from 'mongodb';
+import { DB_STRING } from '../../constants/constants';
 
 async function handler(
   req: NextApiRequest,
@@ -20,7 +21,7 @@ async function handler(
     }
     let client;
     try {
-      client = await MongoClient.connect(process.env.DB_STRING);
+      client = await MongoClient.connect(DB_STRING);
     } catch (error) {
       res.status(500).json({ message: 'Failed to connect to the database' });
       return;

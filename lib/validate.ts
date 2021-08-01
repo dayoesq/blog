@@ -13,3 +13,8 @@ export const validate = (data: Data): boolean => {
   }
   return false;
 };
+
+export const normaliseEmail = (email: string): string => {
+  return email.toLowerCase();
+};
+

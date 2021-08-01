@@ -1,5 +1,5 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
-    DATABASE: string
+    NEXT_PUBLIC_DB: string
   }
 }

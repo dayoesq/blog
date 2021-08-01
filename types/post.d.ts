@@ -4,7 +4,7 @@ interface IPost {
   author?: string;
   content?: string;
   image?: string;
-  date?: string;
+  date?: string | number;
   excerpt?: string;
   slug?: string;
   isFeatured?: boolean;

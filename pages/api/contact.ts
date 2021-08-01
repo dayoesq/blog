@@ -20,7 +20,7 @@ async function handler(
     }
     let client;
     try {
-      client = await MongoClient.connect(process.env.NEXT_PUBLIC_DB);
+      client = await MongoClient.connect(process.env.DB_STRING);
     } catch (error) {
       res.status(500).json({ message: 'Failed to connect to the database' });
       return;

@@ -1,17 +1,22 @@
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 
 import PostHeader from './post-header';
 
 import classes from './post-content.module.css';
 
+SyntaxHighlighter.registerLanguage('js', js);
+
+// Due to the build size of SyntaxHighlighter, it is good to import only required language(s)
+
 type PostProps = {
   post: IPost;
 };
 
-const PostContent: React.FC<PostProps> = ({post}) => {
+const PostContent: React.FC<PostProps> = ({ post }) => {
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
   const customRenderers = {
@@ -40,7 +45,7 @@ const PostContent: React.FC<PostProps> = ({post}) => {
           language={language}
           style={atomDark}
         >
-          { children }
+          {children}
         </SyntaxHighlighter>
       );
     }
@@ -48,7 +53,7 @@ const PostContent: React.FC<PostProps> = ({post}) => {
 
   return (
     <article className={classes.content}>
-      <PostHeader image={imagePath} title={post.title}/>
+      <PostHeader image={imagePath} title={post.title} />
       <ReactMarkdown components={customRenderers}>
         {post.content ? post.content : ''}
       </ReactMarkdown>
